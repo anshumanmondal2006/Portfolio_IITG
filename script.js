@@ -76,3 +76,19 @@ themeToggleBtn.addEventListener('click', () => {
     // Your existing theme toggle code
     // The nav colors will automatically update because of the CSS we added
 });
+// Add these to your script
+const loader = new THREE.GLTFLoader();
+loader.load(
+    'path/to/brain-model.glb',
+    function (gltf) {
+        const brainModel = gltf.scene;
+        brainModel.scale.set(0.5, 0.5, 0.5);
+        scene.add(brainModel);
+    },
+    undefined,
+    function (error) {
+        console.error('Error loading brain model', error);
+    }
+);
+<canvas id="globe-canvas" style="width: 100%; height: 500px;"></canvas>
+
