@@ -7,7 +7,9 @@
         Anshuman-IITG
     </title>
     <script src="https://cdn.tailwindcss.com">
+
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet" />
     <style>
@@ -381,7 +383,7 @@
             <!-- Add this right after your profile image in the home section -->
             <div class="mt-6 relative z-20">
                 <button
-                    class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                    class="bg-purple-600 hover:bg-purple-900 text-black font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                     disabled>
                     <i class="fas fa-download mr-2"></i> Download CV (Coming Soon)
                 </button>
@@ -881,172 +883,386 @@
             }
         });
 
-        // Neuron animation on #neuron-canvas
+        // // Neuron animation on #neuron-canvas
+        // (() => {
+        //     const canvas = document.getElementById('neuron-canvas');
+        //     const ctx = canvas.getContext('2d');
+        //     let width, height, nodes, edges;
+        //     const NODE_RADIUS = 4;
+        //     const MAX_NODES = 75;
+        //     const MAX_EDGES = 10;
+        //     const ANIMATION_DURATION = 10000; // 10 seconds
+        //     let startTime;
+
+        //     function resize() {
+        //         width = canvas.clientWidth;
+        //         height = canvas.clientHeight;
+        //         canvas.width = width * devicePixelRatio;
+        //         canvas.height = height * devicePixelRatio;
+        //         ctx.setTransform(1, 0, 0, 1, 0, 0);
+        //         ctx.scale(devicePixelRatio, devicePixelRatio);
+        //     }
+
+        //     class Node {
+        //         constructor(x, y) {
+        //             this.x = x;
+        //             this.y = y;
+        //             this.vx = (Math.random() - 0.5) * 0.5;
+        //             this.vy = (Math.random() - 0.5) * 0.5;
+        //             this.alpha = 0;
+        //             this.alphaDirection = 1;
+        //         }
+        //         update() {
+        //             this.x += this.vx;
+        //             this.y += this.vy;
+        //             if (this.x < NODE_RADIUS) this.vx = Math.abs(this.vx);
+        //             if (this.x > width - NODE_RADIUS) this.vx = -Math.abs(this.vx);
+        //             if (this.y < NODE_RADIUS) this.vy = Math.abs(this.vy);
+        //             if (this.y > height - NODE_RADIUS) this.vy = -Math.abs(this.vy);
+
+        //             // Alpha oscillation for fade in/out effect
+        //             this.alpha += 0.02 * this.alphaDirection;
+        //             if (this.alpha >= 1) {
+        //                 this.alpha = 1;
+        //                 this.alphaDirection = -1;
+        //             } else if (this.alpha <= 0) {
+        //                 this.alpha = 0;
+        //                 this.alphaDirection = 1;
+        //             }
+        //         }
+        //         draw() {
+        //             ctx.beginPath();
+        //             ctx.fillStyle = `rgba(234, 88, 12, ${this.alpha})`; // orange with alpha
+        //             ctx.shadowColor = 'rgba(234, 88, 12, 0.7)';
+        //             ctx.shadowBlur = 8;
+        //             ctx.arc(this.x, this.y, NODE_RADIUS, 0, Math.PI * 2);
+        //             ctx.fill();
+        //             ctx.shadowBlur = 0;
+        //         }
+        //     }
+
+        //     class Edge {
+        //         constructor(a, b) {
+        //             this.a = a;
+        //             this.b = b;
+        //             this.alpha = 0;
+        //             this.alphaDirection = 1;
+        //         }
+        //         update() {
+        //             // Alpha oscillation for fade in/out effect
+        //             this.alpha += 0.015 * this.alphaDirection;
+        //             if (this.alpha >= 0.8) {
+        //                 this.alpha = 0.8;
+        //                 this.alphaDirection = -1;
+        //             } else if (this.alpha <= 0) {
+        //                 this.alpha = 0;
+        //                 this.alphaDirection = 1;
+        //             }
+        //         }
+        //         draw() {
+        //             ctx.beginPath();
+        //             ctx.strokeStyle = `rgba(234, 88, 12, ${this.alpha})`; // orange with alpha
+        //             ctx.lineWidth = 1.5;
+        //             ctx.moveTo(this.a.x, this.a.y);
+        //             ctx.lineTo(this.b.x, this.b.y);
+        //             ctx.shadowColor = 'rgba(234, 88, 12, 0.5)';
+        //             ctx.shadowBlur = 6;
+        //             ctx.stroke();
+        //             ctx.shadowBlur = 0;
+        //         }
+        //     }
+
+        //     function createNodes() {
+        //         nodes = [];
+        //         for (let i = 0; i < MAX_NODES; i++) {
+        //             nodes.push(new Node(Math.random() * width, Math.random() * height));
+        //         }
+        //     }
+
+        //     function createEdges() {
+        //         edges = [];
+        //         for (let i = 0; i < MAX_EDGES; i++) {
+        //             const a = nodes[Math.floor(Math.random() * nodes.length)];
+        //             let b = nodes[Math.floor(Math.random() * nodes.length)];
+        //             while (b === a) {
+        //                 b = nodes[Math.floor(Math.random() * nodes.length)];
+        //             }
+        //             edges.push(new Edge(a, b));
+        //         }
+        //     }
+
+        //     function clear() {
+        //         ctx.clearRect(0, 0, width, height);
+        //     }
+
+        //     function animate(timestamp) {
+        //         if (!startTime) startTime = timestamp;
+        //         const elapsed = timestamp - startTime;
+
+        //         clear();
+
+        //         // Update and draw edges first (behind nodes)
+        //         edges.forEach(edge => {
+        //             edge.update();
+        //             edge.draw();
+        //         });
+
+        //         // Update and draw nodes
+        //         nodes.forEach(node => {
+        //             node.update();
+        //             node.draw();
+        //         });
+
+        //         requestAnimationFrame(animate);
+
+        //     }
+
+        //     function fadeOut() {
+        //         let opacity = 1;
+        //         const fadeStep = 0.02;
+        //         function fade() {
+        //             opacity -= fadeStep;
+        //             if (opacity <= 0) {
+        //                 opacity = 0;
+        //                 ctx.clearRect(0, 0, width, height);
+        //                 return;
+        //             }
+
+        //             requestAnimationFrame(fade);
+        //         }
+        //         fade();
+        //     }
+
+        //     function init() {
+        //         resize();
+        //         createNodes();
+        //         createEdges();
+        //         canvas.style.opacity = 0.5;
+        //         startTime = null;
+        //         requestAnimationFrame(animate);
+        //     }
+
+        //     window.addEventListener('resize', () => {
+        //         resize();
+        //     });
+
+        //     init();
+        // })();
         (() => {
             const canvas = document.getElementById('neuron-canvas');
-            const ctx = canvas.getContext('2d');
-            let width, height, nodes, edges;
-            const NODE_RADIUS = 4;
-            const MAX_NODES = 75;
-            const MAX_EDGES = 40;
-            const ANIMATION_DURATION = 10000; // 10 seconds
-            let startTime;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({
+                canvas,
+                alpha: true,
+                antialias: true
+            });
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 
-            function resize() {
-                width = canvas.clientWidth;
-                height = canvas.clientHeight;
-                canvas.width = width * devicePixelRatio;
-                canvas.height = height * devicePixelRatio;
-                ctx.setTransform(1, 0, 0, 1, 0, 0);
-                ctx.scale(devicePixelRatio, devicePixelRatio);
-            }
+            // Add lights
+            const ambientLight = new THREE.AmbientLight(0xb91c1c);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(1, 1, 1);
+            scene.add(directionalLight);
 
-            class Node {
-                constructor(x, y) {
-                    this.x = x;
-                    this.y = y;
-                    this.vx = (Math.random() - 0.5) * 0.5;
-                    this.vy = (Math.random() - 0.5) * 0.5;
-                    this.alpha = 0;
-                    this.alphaDirection = 1;
-                }
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    if (this.x < NODE_RADIUS) this.vx = Math.abs(this.vx);
-                    if (this.x > width - NODE_RADIUS) this.vx = -Math.abs(this.vx);
-                    if (this.y < NODE_RADIUS) this.vy = Math.abs(this.vy);
-                    if (this.y > height - NODE_RADIUS) this.vy = -Math.abs(this.vy);
+            // Load brain model (using a simple sphere for demonstration - you'd use a real model)
+            const brainGeometry = new THREE.SphereGeometry(2.6, 40, 40); // Larger and smoother
 
-                    // Alpha oscillation for fade in/out effect
-                    this.alpha += 0.02 * this.alphaDirection;
-                    if (this.alpha >= 1) {
-                        this.alpha = 1;
-                        this.alphaDirection = -1;
-                    } else if (this.alpha <= 0) {
-                        this.alpha = 0;
-                        this.alphaDirection = 1;
-                    }
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.fillStyle = `rgba(234, 88, 12, ${this.alpha})`; // orange with alpha
-                    ctx.shadowColor = 'rgba(234, 88, 12, 0.7)';
-                    ctx.shadowBlur = 8;
-                    ctx.arc(this.x, this.y, NODE_RADIUS, 0, Math.PI * 2);
-                    ctx.fill();
-                    ctx.shadowBlur = 0;
-                }
-            }
-
-            class Edge {
-                constructor(a, b) {
-                    this.a = a;
-                    this.b = b;
-                    this.alpha = 0;
-                    this.alphaDirection = 1;
-                }
-                update() {
-                    // Alpha oscillation for fade in/out effect
-                    this.alpha += 0.015 * this.alphaDirection;
-                    if (this.alpha >= 0.8) {
-                        this.alpha = 0.8;
-                        this.alphaDirection = -1;
-                    } else if (this.alpha <= 0) {
-                        this.alpha = 0;
-                        this.alphaDirection = 1;
-                    }
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.strokeStyle = `rgba(234, 88, 12, ${this.alpha})`; // orange with alpha
-                    ctx.lineWidth = 1.5;
-                    ctx.moveTo(this.a.x, this.a.y);
-                    ctx.lineTo(this.b.x, this.b.y);
-                    ctx.shadowColor = 'rgba(234, 88, 12, 0.5)';
-                    ctx.shadowBlur = 6;
-                    ctx.stroke();
-                    ctx.shadowBlur = 0;
-                }
-            }
-
-            function createNodes() {
-                nodes = [];
-                for (let i = 0; i < MAX_NODES; i++) {
-                    nodes.push(new Node(Math.random() * width, Math.random() * height));
-                }
-            }
-
-            function createEdges() {
-                edges = [];
-                for (let i = 0; i < MAX_EDGES; i++) {
-                    const a = nodes[Math.floor(Math.random() * nodes.length)];
-                    let b = nodes[Math.floor(Math.random() * nodes.length)];
-                    while (b === a) {
-                        b = nodes[Math.floor(Math.random() * nodes.length)];
-                    }
-                    edges.push(new Edge(a, b));
-                }
-            }
-
-            function clear() {
-                ctx.clearRect(0, 0, width, height);
-            }
-
-            function animate(timestamp) {
-                if (!startTime) startTime = timestamp;
-                const elapsed = timestamp - startTime;
-
-                clear();
-
-                // Update and draw edges first (behind nodes)
-                edges.forEach(edge => {
-                    edge.update();
-                    edge.draw();
-                });
-
-                // Update and draw nodes
-                nodes.forEach(node => {
-                    node.update();
-                    node.draw();
-                });
-
-                requestAnimationFrame(animate);
-
-            }
-
-            function fadeOut() {
-                let opacity = 1;
-                const fadeStep = 0.02;
-                function fade() {
-                    opacity -= fadeStep;
-                    if (opacity <= 0) {
-                        opacity = 0;
-                        ctx.clearRect(0, 0, width, height);
-                        return;
-                    }
-
-                    requestAnimationFrame(fade);
-                }
-                fade();
-            }
-
-            function init() {
-                resize();
-                createNodes();
-                createEdges();
-                canvas.style.opacity = 0.5;
-                startTime = null;
-                requestAnimationFrame(animate);
-            }
-
-            window.addEventListener('resize', () => {
-                resize();
+            const brainMaterial = new THREE.MeshPhongMaterial({
+                color: 0x3b82f6, // Tailwind blue-500
+                transparent: true,
+                opacity: 0.85,
+                shininess: 120
             });
 
-            init();
-        })();
+            const brain = new THREE.Mesh(brainGeometry, brainMaterial);
+            scene.add(brain);
 
+            // Add gyri/sulci details (simple version)
+            const detailGeometry = new THREE.SphereGeometry(2.1, 32, 32);
+            const detailMaterial = new THREE.MeshPhongMaterial({
+                color: 0x2563eb, // Tailwind blue-600
+                wireframe: true,
+                transparent: true,
+                opacity: 0.4
+            });
+
+            const brainDetails = new THREE.Mesh(detailGeometry, detailMaterial);
+            scene.add(brainDetails);
+
+            // Neurotransmitter particles
+            const particles = [];
+            const particleCount = 200;
+            const particleGeometry = new THREE.SphereGeometry(0.03, 8, 8);
+            const particleMaterial = new THREE.MeshBasicMaterial({
+                color: 0x00ffff,
+                transparent: true,
+                opacity: 0.8
+            });
+
+            for (let i = 0; i < particleCount; i++) {
+                // Position particles randomly inside the brain
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.random() * Math.PI;
+                const radius = 11.5 * Math.random();
+
+                const x = radius * Math.sin(phi) * Math.cos(theta);
+                const y = radius * Math.sin(phi) * Math.sin(theta);
+                const z = radius * Math.cos(phi);
+
+                const particle = new THREE.Mesh(particleGeometry, particleMaterial);
+                particle.position.set(x, y, z);
+
+                // Store velocity and original position
+                particle.userData = {
+                    velocity: new THREE.Vector3(
+                        (Math.random() - 0.5) * 0.02,
+                        (Math.random() - 0.5) * 0.02,
+                        (Math.random() - 0.5) * 0.02
+                    ),
+                    originalPosition: new THREE.Vector3(x, y, z),
+                    maxDistance: 0.5 + Math.random() * 0.5
+                };
+
+                scene.add(particle);
+                particles.push(particle);
+            }
+
+            // Neural pathway connections
+            const connections = [];
+            for (let i = 0; i < 50; i++) {
+                const startIndex = Math.floor(Math.random() * particles.length);
+                const endIndex = Math.floor(Math.random() * particles.length);
+
+                if (startIndex !== endIndex) {
+                    const start = particles[startIndex];
+                    const end = particles[endIndex];
+
+                    const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+                        start.position,
+                        end.position
+                    ]);
+
+                    const lineMaterial = new THREE.LineBasicMaterial({
+                        color: 0x3399ff,
+                        transparent: true,
+                        opacity: 0.3
+                    });
+
+                    const line = new THREE.Line(lineGeometry, lineMaterial);
+                    scene.add(line);
+                    connections.push({
+                        line,
+                        start,
+                        end
+                    });
+                }
+            }
+
+            // Electrical pulses
+            const pulses = [];
+            for (let i = 0; i < 10; i++) {
+                const pulseGeometry = new THREE.SphereGeometry(0.05, 16, 16);
+                const pulseMaterial = new THREE.MeshBasicMaterial({
+                    color: 0xffff00,
+                    transparent: true
+                });
+
+                const pulse = new THREE.Mesh(pulseGeometry, pulseMaterial);
+                pulse.visible = false;
+                scene.add(pulse);
+                pulses.push(pulse);
+            }
+
+            camera.position.z = 5;
+
+            let pulseTimer = 0;
+            let activePulse = null;
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Rotate brain slowly
+                brain.rotation.y += 0.001;
+                brainDetails.rotation.y += 0.001;
+
+                // Update particles
+                particles.forEach(particle => {
+                    // Move particle
+                    particle.position.add(particle.userData.velocity);
+
+                    // Check distance from original position
+                    const distance = particle.position.distanceTo(particle.userData.originalPosition);
+                    if (distance > particle.userData.maxDistance) {
+                        // Reverse direction
+                        particle.userData.velocity.multiplyScalar(-1);
+                    }
+                });
+
+                // Update connections
+                connections.forEach(conn => {
+                    conn.line.geometry.dispose();
+                    conn.line.geometry = new THREE.BufferGeometry().setFromPoints([
+                        conn.start.position,
+                        conn.end.position
+                    ]);
+                });
+
+                // Handle pulses
+                pulseTimer += 0.01;
+                if (pulseTimer > 3 || (activePulse && activePulse.userData.progress < 1)) {
+                    if (!activePulse || activePulse.userData.progress >= 1) {
+                        // Start new pulse
+                        pulseTimer = 0;
+                        const connection = connections[Math.floor(Math.random() * connections.length)];
+                        activePulse = pulses.find(p => !p.visible);
+
+                        if (activePulse) {
+                            activePulse.visible = true;
+                            activePulse.position.copy(connection.start.position);
+                            activePulse.userData = {
+                                start: connection.start.position.clone(),
+                                end: connection.end.position.clone(),
+                                progress: 0
+                            };
+                        }
+                    } else {
+                        // Continue current pulse
+                        activePulse.userData.progress += 0.02;
+                        activePulse.position.lerpVectors(
+                            activePulse.userData.start,
+                            activePulse.userData.end,
+                            activePulse.userData.progress
+                        );
+
+                        // Scale and fade
+                        activePulse.scale.setScalar(1 + activePulse.userData.progress * 2);
+                        activePulse.material.opacity = 1 - activePulse.userData.progress;
+
+                        if (activePulse.userData.progress >= 1) {
+                            activePulse.visible = false;
+                            activePulse.scale.setScalar(1);
+                            activePulse.material.opacity = 1;
+                            activePulse = null;
+                        }
+                    }
+                }
+
+                renderer.render(scene, camera);
+            }
+
+            function onResize() {
+                const width = canvas.clientWidth;
+                const height = canvas.clientHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            }
+
+            window.addEventListener('resize', onResize);
+            animate();
+        })();
         // Coffee cup tooltip logic
         const coffeeCup = document.getElementById('coffee-cup');
         const tooltip = document.getElementById('coffee-tooltip');
@@ -1088,6 +1304,96 @@
             alert(messages[randomIndex]);
         });
     </script>
+    <script type="module">
+        import * as THREE from 'https://cdn.skypack.dev/three';
+        import { OrbitControls } from 'https://cdn.skypack.dev/three/examples/jsm/controls/OrbitControls.js';
+
+        const canvas = document.getElementById('globe-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        camera.position.set(0, 0, 4);
+        controls.update();
+
+        // Globe (Earth sphere)
+        const textureLoader = new THREE.TextureLoader();
+        const earthTexture = await textureLoader.loadAsync('https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg');
+        const globe = new THREE.Mesh(
+            new THREE.SphereGeometry(1, 64, 64),
+            new THREE.MeshBasicMaterial({ map: earthTexture })
+        );
+        scene.add(globe);
+
+        const visitorDots = [];
+
+        function addVisitorDot(lat, lon) {
+            const radius = 1.01;
+            const phi = (90 - lat) * (Math.PI / 180);
+            const theta = (lon + 180) * (Math.PI / 180);
+
+            const x = radius * Math.sin(phi) * Math.cos(theta);
+            const y = radius * Math.cos(phi);
+            const z = radius * Math.sin(phi) * Math.sin(theta);
+
+            const dotGeometry = new THREE.SphereGeometry(0.01, 8, 8);
+            const dotMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+            const dot = new THREE.Mesh(dotGeometry, dotMaterial);
+            dot.position.set(x, y, z);
+            scene.add(dot);
+            visitorDots.push(dot);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            globe.rotation.y += 0.0005;
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Add visitors after a small delay to ensure IP fetch has run
+        setTimeout(() => {
+            visitorLocations.forEach(loc => {
+                addVisitorDot(loc.lat, loc.lon);
+            });
+
+            console.log("Total Visitors:", visitorCount);
+        }, 1500);
+
+        window.addEventListener('resize', () => {
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+
+    <script>
+        let visitorCount = 0;
+        const visitorLocations = [];
+
+        async function trackVisitor() {
+            try {
+                const res = await fetch("https://ipapi.co/json/");
+                const data = await res.json();
+                const { latitude, longitude, city, country_name } = data;
+                console.log(`Visitor from ${city}, ${country_name}`);
+
+                // Update the globe
+                visitorLocations.push({ lat: latitude, lon: longitude });
+                visitorCount += 1;
+
+                // Optionally, save to your backend here
+            } catch (err) {
+                console.error("IP tracking failed", err);
+            }
+        }
+
+        trackVisitor();
+    </script>
+
 </body>
 
 </html>
