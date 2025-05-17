@@ -135,6 +135,7 @@ html {
 
 .typewriter {
     display: inline-block;
+    width: 0;
     overflow: hidden;
     border-right: 2px solid white;
     white-space: nowrap;
