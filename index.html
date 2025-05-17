@@ -437,480 +437,491 @@
             <div class="relative z-50">
                 <!-- your timeline content here -->
             </div>
-            <h2 class="text-4xl mb-12 text-center">
-                <style>
-                    @keyframes typing {
-                        0% {
-                            width: 0;
+            <!-- Education Section -->
+            <section id="education" class="relative py-16 px-4 text-white overflow-hidden bg-cover bg-center"
+                style="background-image: url('top.png');">
+                <!-- Vertical center line -->
+
+                <!-- Section Title with Typewriter Effect -->
+                <h2 class="text-4xl mb-12 text-center">
+                    <style>
+                        @keyframes typing {
+                            0% {
+                                width: 0;
+                            }
+
+                            50% {
+                                width: 100%;
+                            }
+
+                            100% {
+                                width: 0;
+                            }
                         }
 
-                        50% {
-                            width: 100%;
+                        @keyframes blink {
+                            50% {
+                                border-color: transparent;
+                            }
                         }
 
-                        100% {
-                            width: 0;
+                        .typewriter {
+                            display: inline-block;
+                            max-width: fit-content;
+                            overflow: hidden;
+                            border-right: 2px solid white;
+                            white-space: nowrap;
+                            animation: typing 4s steps(30, end) infinite, blink 0.7s step-end infinite;
                         }
-                    }
+                    </style>
+                    <span class="typewriter section-title-gradient">Educational Timeline...</span>
+                </h2>
 
-                    @keyframes blink {
-                        50% {
-                            border-color: transparent;
-                        }
-                    }
+                <div class="relative max-w-5xl mx-auto space-y-12">
 
-                    .typewriter {
-                        display: inline-block;
-                        max-width: fit-content;
-                        overflow: hidden;
-                        border-right: 2px solid white;
-                        white-space: nowrap;
-                        animation: typing 4s steps(30, end) infinite, blink 0.7s step-end infinite;
-                    }
-                </style>
-                <span class="typewriter section-title-gradient">Educational Timeline...</span>
-            </h2>
-            <div class="relative max-w-5xl mx-auto">
-                <!-- Vertical line -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-600"></div>
-
-                <!-- Timeline item 1 -->
-                <div class="mb-12 flex justify-start items-center w-full">
-                    <div class="w-1/2 pr-8 text-right hidden md:block">
-                        <h3 class="text-2xl font-bold">Secondary</h3>
-                        <p class="italic text-gray-400">The Hyderabad Public School, Ramanthapur</p>
-                        <p>Secured 98.8% </p>
-                        <p class="text-gray-400 mt-1">CBSE(Central Board of Secondary Education)</p>
-                    </div>
-
-                    <div
-                        class="w-20 h-20 z-20 border-4 border-white bg-white rounded-full mx-4 flex items-center justify-center shadow-lg">
-                        <img src="hpsr.png" alt="Institution Logo" class="w-full h-full object-contain p-2">
-                    </div>
-                    <div class="w-1/2 pl-8 md:hidden">
-                        <!-- Mobile view (stacked) -->
-                        <h3 class="text-2xl font-bold">Class X</h3>
-                        <p class="italic text-gray-400">Saint Ann College, Lakhimpur Kheri</p>
-                        <p>Completed Class X (CISCE) with 94.20% marks.</p>
-                        <p class="text-gray-400 mt-1">CISCE</p>
-                    </div>
-                </div>
-
-                <!-- Timeline item 2 -->
-                <div class="mb-12 flex justify-end items-center w-full">
-                    <div class="w-1/2 pr-8 md:hidden">
-                        <h3 class="text-2xl font-bold">Class XII</h3>
-                        <p class="italic text-gray-400">Saint Ann College, Lakhimpur Kheri</p>
-                        <p>Completed Class XII (ISC) with 98.0%. Secured 100 in CS and received INSPIRE Scholarship.</p>
-                        <p class="text-gray-400 mt-1">CISCE</p>
-                    </div>
-                    <div
-                        class="w-20 h-20 z-20 border-4 border-white bg-white rounded-full mx-4 flex items-center justify-center shadow-lg">
-                        <img src="srichaitanya.png" alt="Institution Logo" class="w-full h-full object-contain p-2">
+                    <!-- Timeline Item 1 -->
+                    <div class="flex flex-col md:flex-row justify-center items-center w-full relative">
+                        <!-- Left (desktop) -->
+                        <div class="w-full md:w-1/2 md:pr-8 hidden md:block text-right">
+                            <div class="bg-gray-900 p-4 rounded-lg shadow border border-orange-600">
+                                <h3 class="text-2xl font-bold">Secondary</h3>
+                                <p class="italic text-gray-400">The Hyderabad Public School, Ramanthapur</p>
+                                <p>Secured 98.8%</p>
+                                <p class="text-gray-400 mt-1">CBSE (Central Board of Secondary Education)</p>
+                            </div>
+                        </div>
+                        <!-- Dot -->
+                        <div
+                            class="w-20 h-20 z-20 border-4 border-white bg-white rounded-full mx-4 flex items-center justify-center shadow-lg my-6 md:my-0">
+                            <img src="hpsr.png" alt="Institution Logo" class="w-full h-full object-contain p-2">
+                        </div>
+                        <!-- Right (mobile) -->
+                        <div class="w-full md:w-1/2 md:pl-8 md:hidden">
+                            <div class="bg-gray-900 p-4 rounded-lg shadow border border-orange-600 text-center">
+                                <h3 class="text-2xl font-bold">Class X</h3>
+                                <p class="italic text-gray-400">Saint Ann College, Lakhimpur Kheri</p>
+                                <p>Completed Class X (CISCE) with 94.20% marks.</p>
+                                <p class="text-gray-400 mt-1">CISCE</p>
+                            </div>
+                        </div>
                     </div>
 
+                    <!-- Timeline Item 2 -->
+                    <div class="flex flex-col md:flex-row justify-center items-center w-full relative">
+                        <!-- Left (mobile) -->
+                        <div class="w-full md:w-1/2 md:pr-8 md:hidden">
+                            <div class="bg-gray-900 p-4 rounded-lg shadow border border-orange-600 text-center">
+                                <h3 class="text-2xl font-bold">Class XII</h3>
+                                <p class="italic text-gray-400">Saint Ann College, Lakhimpur Kheri</p>
+                                <p>Completed Class XII (ISC) with 98.0%. Secured 100 in CS and received INSPIRE
+                                    Scholarship.</p>
+                                <p class="text-gray-400 mt-1">CISCE</p>
+                            </div>
+                        </div>
+                        <!-- Dot -->
+                        <div
+                            class="w-20 h-20 z-20 border-4 border-white bg-white rounded-full mx-4 flex items-center justify-center shadow-lg my-6 md:my-0">
+                            <img src="srichaitanya.png" alt="Institution Logo" class="w-full h-full object-contain p-2">
+                        </div>
+                        <!-- Right (desktop) -->
+                        <div class="w-full md:w-1/2 md:pl-8 hidden md:block text-left">
+                            <div class="bg-gray-900 p-4 rounded-lg shadow border border-orange-600">
+                                <h3 class="text-2xl font-bold">Senior Secondary</h3>
+                                <p class="italic text-gray-400">Sri Chaitanya College of Education</p>
+                                <p>Secured 98.4%</p>
+                                <p class="text-gray-400 mt-1">TSBIE (Telangana State Board of Intermediate Education)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div class="w-1/2 pl-8 text-left hidden md:block">
-                        <h3 class="text-2xl font-bold">Senior Secondary</h3>
-                        <p class="italic text-gray-400">Sri Chaitanya College of Education</p>
-                        <p>Secured 98.4%</p>
-                        <p class="text-gray-400 mt-1">TSBIE(Telangana State Board of Intermediate Education)</p>
+                    <!-- Timeline Item 3 -->
+                    <div class="flex flex-col md:flex-row justify-center items-center w-full relative">
+                        <!-- Left (desktop) -->
+                        <div class="w-full md:w-1/2 md:pr-8 hidden md:block text-right">
+                            <div class="bg-gray-900 p-4 rounded-lg shadow border border-orange-600">
+                                <h3 class="text-2xl font-bold">Undergraduate</h3>
+                                <p class="italic text-gray-400">Indian Institute of Technology (IIT Guwahati)</p>
+                                <p>B.Tech in Electronics and Communication Engineering (ECE)</p>
+                                <p class="text-gray-400 mt-1">Year: 2023 - Present</p>
+                            </div>
+                        </div>
+                        <!-- Dot -->
+                        <div
+                            class="w-20 h-20 z-20 border-4 border-white bg-white rounded-full mx-4 flex items-center justify-center shadow-lg my-6 md:my-0">
+                            <img src="iitg.png" alt="Institution Logo" class="w-full h-full object-contain p-2">
+                        </div>
+                        <!-- Right (mobile) -->
+                        <div class="w-full md:w-1/2 md:pl-8 md:hidden">
+                            <div class="bg-gray-900 p-4 rounded-lg shadow border border-orange-600 text-center">
+                                <h3 class="text-2xl font-bold">Graduation</h3>
+                                <p class="italic text-gray-400">Indian Institute of Technology (IIT Guwahati)</p>
+                                <p>B.Tech in Data Science & AI. Currently in 4th semester with a C.P.I of 7.17.</p>
+                                <p class="text-gray-400 mt-1">Year: 2023 - Present</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Timeline item 3 -->
-                <div class="mb-12 flex justify-start items-center w-full">
-                    <div class="w-1/2 pr-8 text-right hidden md:block">
-                        <h3 class="text-2xl font-bold">Undergraduate</h3>
-                        <p class="italic text-gray-400">Indian Institute of Technology (IIT, Guwahati)</p>
-                        <p>B.Tech in Electronics and Communication Engineering(ECE)</p>
-                        <p class="text-gray-400 mt-1">Year: 2023 - Present</p>
-                    </div>
-                    <div
-                        class="w-20 h-20 z-20 border-4 border-white bg-white rounded-full mx-4 flex items-center justify-center shadow-lg">
-                        <img src="iitg.png" alt="Institution Logo" class="w-full h-full object-contain p-2">
-                    </div>
-                    <div class="w-1/2 pl-8 md:hidden">
-                        <h3 class="text-2xl font-bold">Graduation</h3>
-                        <p class="italic text-gray-400">Indian Institute of Technology (IIT Guwahati)</p>
-                        <p>B.Tech in Data Science & AI. Currently in 4th semester with a C.P.I of 7.17.</p>
-                        <p class="text-gray-400 mt-1">Year: 2023 - Present</p>
-                    </div>
                 </div>
-            </div>
-        </section>
-        <!-- Experience -->
-        <section class="text-white" id="experience">
-            <h2 class="text-4xl mb-12 text-center section-title-gradient">
-                Experience
-            </h2>
-            <div class="space-y-10 max-w-4xl mx-auto">
-                <article class="bg-gray-900 rounded-lg p-6 shadow-lg border border-orange-600">
-                    <h3 class="text-2xl font-bold text-white">
-                        McKinsey &amp; Co.
-                    </h3>
-                    <p class="italic text-gray-400 mb-2">
-                        MFP 2025
-                    </p>
-                    <p class="mb-2">
-                        <span class="font-bold text-orange-600">
-                            Tasks:
-                        </span>
-                        Selected for a highly competitive, McKinsey& Co. program focused on essential workplace and
-                        leadership skills. working on problem-solving, effective communication, and structured thinking
-                        through real-world business case studies.
-                    </p>
-                    <p class="text-gray-400">
-                        Duration: April 2025 - Present
-                    </p>
-                </article>
-            </div>
-        </section>
-        <!-- Projects -->
-        <section class="text-white" id="projects">
-            <h2 class="text-4xl mb-12 text-center section-title-gradient">
-                Projects
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-                <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
-                    tabindex="0">
-                    <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
-                        <div class="flip-card-front flex flex-col justify-center items-center h-full">
-                            <img alt="Illustration of sentiment analysis of customer product reviews using NLP and Flask with code snippets and charts"
-                                class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
-                                src="https://storage.googleapis.com/a1aa/image/16ea3d26-9fd4-4d25-3aa3-fc89d14fdb55.jpg"
-                                width="150" />
-                            <h3 class="text-xl font-bold text-orange-600 text-center">
-                                Sentiment Analysis of Customer Product Reviews using NLP and Flask
-                            </h3>
-                        </div>
-                        <div class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
-                            <p>
-                                Developed a web application using Flask that performs sentiment analysis on customer
-                                product reviews using natural language processing techniques.
-                            </p>
+            </section>
+
+            <!-- Projects -->
+            <section class="text-white" id="projects">
+                <h2 class="text-4xl mb-12 text-center section-title-gradient">
+                    Projects
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+                    <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
+                        tabindex="0">
+                        <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
+                            <div class="flip-card-front flex flex-col justify-center items-center h-full">
+                                <img alt="Illustration of sentiment analysis of customer product reviews using NLP and Flask with code snippets and charts"
+                                    class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
+                                    src="https://storage.googleapis.com/a1aa/image/16ea3d26-9fd4-4d25-3aa3-fc89d14fdb55.jpg"
+                                    width="150" />
+                                <h3 class="text-xl font-bold text-orange-600 text-center">
+                                    Sentiment Analysis of Customer Product Reviews using NLP and Flask
+                                </h3>
+                            </div>
+                            <div
+                                class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
+                                <p>
+                                    Developed a web application using Flask that performs sentiment analysis on customer
+                                    product reviews using natural language processing techniques.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
-                    tabindex="0">
-                    <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
-                        <div class="flip-card-front flex flex-col justify-center items-center h-full">
-                            <img alt="Road lane detection system using OpenCV showing lane markings on a road image"
-                                class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
-                                src="https://storage.googleapis.com/a1aa/image/7025568f-3384-48cb-254f-300b56a4053c.jpg"
-                                width="150" />
-                            <h3 class="text-xl font-bold text-orange-600 text-center">
-                                Road Lane Detection System using OpenCV
-                            </h3>
-                        </div>
-                        <div class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
-                            <p>
-                                Implemented a computer vision system using OpenCV to detect and highlight road lanes in
-                                real-time video streams for driver assistance.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
-                    tabindex="0">
-                    <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
-                        <div class="flip-card-front flex flex-col justify-center items-center h-full">
-                            <img alt="Biomedical image classification using convolutional neural networks with sample medical images"
-                                class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
-                                src="https://storage.googleapis.com/a1aa/image/fd0f4c23-fa75-45d8-fd73-73885baa889d.jpg"
-                                width="150" />
-                            <h3 class="text-xl font-bold text-orange-600 text-center">
-                                Biomedical Image Classification using CNN
-                            </h3>
-                        </div>
-                        <div class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
-                            <p>
-                                Trained a convolutional neural network to classify biomedical images into different
-                                categories with high accuracy for diagnostic support.
-                            </p>
+                    <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
+                        tabindex="0">
+                        <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
+                            <div class="flip-card-front flex flex-col justify-center items-center h-full">
+                                <img alt="Road lane detection system using OpenCV showing lane markings on a road image"
+                                    class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
+                                    src="https://storage.googleapis.com/a1aa/image/7025568f-3384-48cb-254f-300b56a4053c.jpg"
+                                    width="150" />
+                                <h3 class="text-xl font-bold text-orange-600 text-center">
+                                    Road Lane Detection System using OpenCV
+                                </h3>
+                            </div>
+                            <div
+                                class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
+                                <p>
+                                    Implemented a computer vision system using OpenCV to detect and highlight road lanes
+                                    in
+                                    real-time video streams for driver assistance.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
-                    tabindex="0">
-                    <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
-                        <div class="flip-card-front flex flex-col justify-center items-center h-full">
-                            <img alt="F1 racing car detection system showing bounding boxes on race cars in a track image"
-                                class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
-                                src="https://storage.googleapis.com/a1aa/image/7bbc43bc-91ac-42b9-b591-79b62ff2b9c6.jpg"
-                                width="150" />
-                            <h3 class="text-xl font-bold text-orange-600 text-center">
-                                F1 Racing Car Detection
-                            </h3>
-                        </div>
-                        <div class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
-                            <p>
-                                Developed an object detection model to identify and track Formula 1 racing cars in video
-                                footage using deep learning techniques.
-                            </p>
+                    <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
+                        tabindex="0">
+                        <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
+                            <div class="flip-card-front flex flex-col justify-center items-center h-full">
+                                <img alt="Biomedical image classification using convolutional neural networks with sample medical images"
+                                    class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
+                                    src="https://storage.googleapis.com/a1aa/image/fd0f4c23-fa75-45d8-fd73-73885baa889d.jpg"
+                                    width="150" />
+                                <h3 class="text-xl font-bold text-orange-600 text-center">
+                                    Biomedical Image Classification using CNN
+                                </h3>
+                            </div>
+                            <div
+                                class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
+                                <p>
+                                    Trained a convolutional neural network to classify biomedical images into different
+                                    categories with high accuracy for diagnostic support.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
-                    tabindex="0">
-                    <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
-                        <div class="flip-card-front flex flex-col justify-center items-center h-full">
-                            <img alt="Image dehazing using encoder-decoder mechanism showing before and after images"
-                                class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
-                                src="https://storage.googleapis.com/a1aa/image/ebee0533-298a-4d6c-f370-c6891bd99dff.jpg"
-                                width="150" />
-                            <h3 class="text-xl font-bold text-orange-600 text-center">
-                                Image Dehazing using Encoder-Decoder Mechanism
-                            </h3>
+                    <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
+                        tabindex="0">
+                        <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
+                            <div class="flip-card-front flex flex-col justify-center items-center h-full">
+                                <img alt="F1 racing car detection system showing bounding boxes on race cars in a track image"
+                                    class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
+                                    src="https://storage.googleapis.com/a1aa/image/7bbc43bc-91ac-42b9-b591-79b62ff2b9c6.jpg"
+                                    width="150" />
+                                <h3 class="text-xl font-bold text-orange-600 text-center">
+                                    F1 Racing Car Detection
+                                </h3>
+                            </div>
+                            <div
+                                class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
+                                <p>
+                                    Developed an object detection model to identify and track Formula 1 racing cars in
+                                    video
+                                    footage using deep learning techniques.
+                                </p>
+                            </div>
                         </div>
-                        <div class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
-                            <p>
-                                Implemented an encoder-decoder neural network to remove haze from images, enhancing
-                                visibility and image quality.
-                            </p>
+                    </div>
+                    <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
+                        tabindex="0">
+                        <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
+                            <div class="flip-card-front flex flex-col justify-center items-center h-full">
+                                <img alt="Image dehazing using encoder-decoder mechanism showing before and after images"
+                                    class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
+                                    src="https://storage.googleapis.com/a1aa/image/ebee0533-298a-4d6c-f370-c6891bd99dff.jpg"
+                                    width="150" />
+                                <h3 class="text-xl font-bold text-orange-600 text-center">
+                                    Image Dehazing using Encoder-Decoder Mechanism
+                                </h3>
+                            </div>
+                            <div
+                                class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
+                                <p>
+                                    Implemented an encoder-decoder neural network to remove haze from images, enhancing
+                                    visibility and image quality.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
+                        tabindex="0">
+                        <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
+                            <div class="flip-card-front flex flex-col justify-center items-center h-full">
+                                <img alt="Stock market trend prediction graph with candlestick charts and forecast lines"
+                                    class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
+                                    src="https://storage.googleapis.com/a1aa/image/ddbe784c-a571-4a4a-31bb-9d92550cc991.jpg"
+                                    width="150" />
+                                <h3 class="text-xl font-bold text-orange-600 text-center">
+                                    Stock Market Trend Prediction
+                                </h3>
+                            </div>
+                            <div
+                                class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
+                                <p>
+                                    Developed predictive models to forecast stock market trends using historical data
+                                    and
+                                    machine learning algorithms.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none"
-                    tabindex="0">
-                    <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
-                        <div class="flip-card-front flex flex-col justify-center items-center h-full">
-                            <img alt="Stock market trend prediction graph with candlestick charts and forecast lines"
-                                class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
-                                src="https://storage.googleapis.com/a1aa/image/ddbe784c-a571-4a4a-31bb-9d92550cc991.jpg"
-                                width="150" />
-                            <h3 class="text-xl font-bold text-orange-600 text-center">
-                                Stock Market Trend Prediction
-                            </h3>
-                        </div>
-                        <div class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
-                            <p>
-                                Developed predictive models to forecast stock market trends using historical data and
-                                machine learning algorithms.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Research Interests and Skills -->
-        <section class="text-white max-w-7xl mx-auto" id="research">
-            <h2 class="text-4xl mb-12 text-center section-title-gradient">
-                Research Interests &amp; Skills
-            </h2>
-            <div class="flex flex-col sm:flex-row justify-center gap-8 max-w-5xl mx-auto">
-                <div class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex-1 max-w-md">
-                    <h3 class="text-xl font-bold mb-6 text-orange-600 text-center">
-                        Research Interests
-                    </h3>
-                    <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Machine Learning
-                            </span>
-                            - Algorithms and applications
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Natural Language Processing
-                            </span>
-                            - Text analysis and generation
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Computer Vision
-                            </span>
-                            - Image and video processing
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Time Series Analysis
-                            </span>
-                            - Forecasting and anomaly detection
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Reinforcement Learning
-                            </span>
-                            - Decision making models
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex-1 max-w-md">
-                    <h3 class="text-xl font-bold mb-6 text-orange-600 text-center">
-                        Skills
-                    </h3>
-                    <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Python
-                            </span>
-                            - Pandas, NumPy, Scikit-learn
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                R
-                            </span>
-                            - Statistical analysis and visualization
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                SQL
-                            </span>
-                            - Database querying and management
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                TensorFlow &amp; PyTorch
-                            </span>
-                            - Deep learning frameworks
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Tableau &amp; Power BI
-                            </span>
-                            - Data visualization tools
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Git &amp; GitHub
-                            </span>
-                            - Version control and collaboration
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Docker
-                            </span>
-                            - Containerization and deployment
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Linux
-                            </span>
-                            - Command line and scripting
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                AWS
-                            </span>
-                            - Cloud computing services
-                        </li>
-                        <li>
-                            <span class="font-bold text-orange-600">
-                                Jupyter Notebooks
-                            </span>
-                            - Interactive coding and documentation
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- Interests -->
-        <section class="text-white max-w-5xl mx-auto" id="interests">
-            <h2 class="text-4xl mb-12 text-center section-title-gradient">
-                Other Interests
-            </h2>
-            <div class="space-y-12">
-                <article
-                    class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex flex-col md:flex-row items-center md:space-x-8">
-                    <img alt="Action shot of a cricket player batting on a sunny cricket field with stadium in background"
-                        class="rounded-md mb-4 md:mb-0 w-full md:w-48 object-cover shadow-md" height="150"
-                        loading="lazy"
-                        src="https://storage.googleapis.com/a1aa/image/feed37b6-6b50-475d-1abd-97045d2fa100.jpg"
-                        width="200" />
-                    <div class="flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold text-orange-600 mb-2">
-                            Cricket
+            </section>
+            <!-- Research Interests and Skills -->
+            <section class="text-white max-w-7xl mx-auto" id="research">
+                <h2 class="text-4xl mb-12 text-center section-title-gradient">
+                    Research Interests &amp; Skills
+                </h2>
+                <div class="flex flex-col sm:flex-row justify-center gap-8 max-w-5xl mx-auto">
+                    <div class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex-1 max-w-md">
+                        <h3 class="text-xl font-bold mb-6 text-orange-600 text-center">
+                            Research Interests
                         </h3>
-                        <p class="text-gray-300">
-                            Cricket is a sport I deeply enjoy, both playing and following international matches. The
-                            strategy, teamwork, and thrill of the game inspire me.
-                        </p>
+                        <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Machine Learning
+                                </span>
+                                - Algorithms and applications
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Natural Language Processing
+                                </span>
+                                - Text analysis and generation
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Computer Vision
+                                </span>
+                                - Image and video processing
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Time Series Analysis
+                                </span>
+                                - Forecasting and anomaly detection
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Reinforcement Learning
+                                </span>
+                                - Decision making models
+                            </li>
+                        </ul>
                     </div>
-                </article>
-                <article
-                    class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex flex-col md:flex-row items-center md:space-x-8">
-                    <img alt="High-speed Formula 1 race car speeding on a professional racing track with blurred background"
-                        class="rounded-md mb-4 md:mb-0 w-full md:w-48 object-cover shadow-md" height="150"
-                        loading="lazy"
-                        src="https://storage.googleapis.com/a1aa/image/5c36f5f8-0d85-48af-11d7-8188e782e09f.jpg"
-                        width="200" />
-                    <div class="flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold text-orange-600 mb-2">
-                            F1 Racing
+                    <div class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex-1 max-w-md">
+                        <h3 class="text-xl font-bold mb-6 text-orange-600 text-center">
+                            Skills
                         </h3>
-                        <p class="text-gray-300">
-                            Formula 1 racing fascinates me with its blend of cutting-edge technology, precision driving,
-                            and intense competition. I follow the seasons closely.
-                        </p>
+                        <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Python
+                                </span>
+                                - Pandas, NumPy, Scikit-learn
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    R
+                                </span>
+                                - Statistical analysis and visualization
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    SQL
+                                </span>
+                                - Database querying and management
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    TensorFlow &amp; PyTorch
+                                </span>
+                                - Deep learning frameworks
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Tableau &amp; Power BI
+                                </span>
+                                - Data visualization tools
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Git &amp; GitHub
+                                </span>
+                                - Version control and collaboration
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Docker
+                                </span>
+                                - Containerization and deployment
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Linux
+                                </span>
+                                - Command line and scripting
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    AWS
+                                </span>
+                                - Cloud computing services
+                            </li>
+                            <li>
+                                <span class="font-bold text-orange-600">
+                                    Jupyter Notebooks
+                                </span>
+                                - Interactive coding and documentation
+                            </li>
+                        </ul>
                     </div>
-                </article>
-                <article
-                    class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex flex-col md:flex-row items-center md:space-x-8">
-                    <img alt="World map with icons representing geopolitical hotspots and global connections"
-                        class="rounded-md mb-4 md:mb-0 w-full md:w-48 object-cover shadow-md" height="150"
-                        loading="lazy"
-                        src="https://storage.googleapis.com/a1aa/image/afeab675-f59e-4b29-8d3b-92d359e1500a.jpg"
-                        width="200" />
-                    <div class="flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold text-orange-600 mb-2">
-                            Geopolitics
+                </div>
+            </section>
+            <!-- Interests -->
+            <section class="text-white max-w-5xl mx-auto" id="interests">
+                <h2 class="text-4xl mb-12 text-center section-title-gradient">
+                    Other Interests
+                </h2>
+                <div class="space-y-12">
+                    <article
+                        class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex flex-col md:flex-row items-center md:space-x-8">
+                        <img alt="Action shot of a cricket player batting on a sunny cricket field with stadium in background"
+                            class="rounded-md mb-4 md:mb-0 w-full md:w-48 object-cover shadow-md" height="150"
+                            loading="lazy"
+                            src="https://storage.googleapis.com/a1aa/image/feed37b6-6b50-475d-1abd-97045d2fa100.jpg"
+                            width="200" />
+                        <div class="flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold text-orange-600 mb-2">
+                                Cricket
+                            </h3>
+                            <p class="text-gray-300">
+                                Cricket is a sport I deeply enjoy, both playing and following international matches. The
+                                strategy, teamwork, and thrill of the game inspire me.
+                            </p>
+                        </div>
+                    </article>
+                    <article
+                        class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex flex-col md:flex-row items-center md:space-x-8">
+                        <img alt="High-speed Formula 1 race car speeding on a professional racing track with blurred background"
+                            class="rounded-md mb-4 md:mb-0 w-full md:w-48 object-cover shadow-md" height="150"
+                            loading="lazy"
+                            src="https://storage.googleapis.com/a1aa/image/5c36f5f8-0d85-48af-11d7-8188e782e09f.jpg"
+                            width="200" />
+                        <div class="flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold text-orange-600 mb-2">
+                                F1 Racing
+                            </h3>
+                            <p class="text-gray-300">
+                                Formula 1 racing fascinates me with its blend of cutting-edge technology, precision
+                                driving,
+                                and intense competition. I follow the seasons closely.
+                            </p>
+                        </div>
+                    </article>
+                    <article
+                        class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex flex-col md:flex-row items-center md:space-x-8">
+                        <img alt="World map with icons representing geopolitical hotspots and global connections"
+                            class="rounded-md mb-4 md:mb-0 w-full md:w-48 object-cover shadow-md" height="150"
+                            loading="lazy"
+                            src="https://storage.googleapis.com/a1aa/image/afeab675-f59e-4b29-8d3b-92d359e1500a.jpg"
+                            width="200" />
+                        <div class="flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold text-orange-600 mb-2">
+                                Geopolitics
+                            </h3>
+                            <p class="text-gray-300">
+                                I am intrigued by global politics and international relations. Understanding
+                                geopolitical
+                                dynamics helps me appreciate the complexities of our world.
+                            </p>
+                        </div>
+                    </article>
+                    <div
+                        class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg text-center max-w-3xl mx-auto">
+                        <h3 class="text-3xl font-bold text-orange-600 mb-6">
+                            Quotes I Live By
                         </h3>
-                        <p class="text-gray-300">
-                            I am intrigued by global politics and international relations. Understanding geopolitical
-                            dynamics helps me appreciate the complexities of our world.
-                        </p>
+                        <blockquote class="italic text-gray-300 space-y-4">
+                            <p>
+                                “The only way to do great work is to love what you do.” – Steve Jobs
+                            </p>
+                            <p>
+                                “In the middle of difficulty lies opportunity.” – Albert Einstein
+                            </p>
+                            <p>
+                                “Success is not final, failure is not fatal: It is the courage to continue that counts.”
+                                –
+                                Winston Churchill
+                            </p>
+                        </blockquote>
                     </div>
-                </article>
-                <div
-                    class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg text-center max-w-3xl mx-auto">
-                    <h3 class="text-3xl font-bold text-orange-600 mb-6">
-                        Quotes I Live By
-                    </h3>
-                    <blockquote class="italic text-gray-300 space-y-4">
-                        <p>
-                            “The only way to do great work is to love what you do.” – Steve Jobs
-                        </p>
-                        <p>
-                            “In the middle of difficulty lies opportunity.” – Albert Einstein
-                        </p>
-                        <p>
-                            “Success is not final, failure is not fatal: It is the courage to continue that counts.” –
-                            Winston Churchill
-                        </p>
-                    </blockquote>
                 </div>
-            </div>
-        </section>
-        <!-- Contact -->
-        <section class="text-white max-w-3xl mx-auto" id="contact">
-            <h2 class="text-4xl mb-12 text-center section-title-gradient">
-                Contact Me
-            </h2>
-            <!-- Update your contact section with these changes -->
-            <div class="bg-gray-900 rounded-lg p-8 border border-orange-600 shadow-lg space-y-8 relative z-50">
-                <div class="flex items-center space-x-4 group">
-                    <i class="fab fa-linkedin fa-2x text-orange-600"></i>
-                    <a class="text-lg font-semibold text-white hover:text-orange-600 transition break-all"
-                        href="https://www.linkedin.com/in/anshuman-mondal-145314280" rel="noopener noreferrer"
-                        target="_blank" style="pointer-events: auto !important">
-                        linkedin.com/in/anshuman-mondal-145314280
-                    </a>
+            </section>
+            <!-- Contact -->
+            <section class="text-white max-w-3xl mx-auto" id="contact">
+                <h2 class="text-4xl mb-12 text-center section-title-gradient">
+                    Contact Me
+                </h2>
+                <!-- Update your contact section with these changes -->
+                <div class="bg-gray-900 rounded-lg p-8 border border-orange-600 shadow-lg space-y-8 relative z-50">
+                    <div class="flex items-center space-x-4 group">
+                        <i class="fab fa-linkedin fa-2x text-orange-600"></i>
+                        <a class="text-lg font-semibold text-white hover:text-orange-600 transition break-all"
+                            href="https://www.linkedin.com/in/anshuman-mondal-145314280" rel="noopener noreferrer"
+                            target="_blank" style="pointer-events: auto !important">
+                            linkedin.com/in/anshuman-mondal-145314280
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-4 group">
+                        <i class="fas fa-envelope fa-2x text-orange-600"></i>
+                        <a class="text-lg font-semibold text-white hover:text-orange-600 transition break-all"
+                            href="mailto:anshuman.mondal@iitg.ac.in" style="pointer-events: auto !important">
+                            anshuman.mondal@iitg.ac.in
+                        </a>
+                    </div>
                 </div>
-                <div class="flex items-center space-x-4 group">
-                    <i class="fas fa-envelope fa-2x text-orange-600"></i>
-                    <a class="text-lg font-semibold text-white hover:text-orange-600 transition break-all"
-                        href="mailto:anshuman.mondal@iitg.ac.in" style="pointer-events: auto !important">
-                        anshuman.mondal@iitg.ac.in
-                    </a>
                 </div>
-            </div>
-            </div>
-            <footer class="mt-16 text-center text-gray-500 text-sm max-w-2xl mx-auto pb-6">
-                © 2025 Anshuman Mondal. All rights reserved.
-            </footer>
-        </section>
+                <footer class="mt-16 text-center text-gray-500 text-sm max-w-2xl mx-auto pb-6">
+                    © 2025 Anshuman Mondal. All rights reserved.
+                </footer>
+            </section>
     </main>
     Floating coffee cup icon with tooltip
     <img alt="Animated floating coffee cup icon" aria-describedby="coffee-tooltip" height="60" id="coffee-cup"
@@ -919,52 +930,6 @@
     <div class="tooltip" id="coffee-tooltip" role="tooltip">
         Need a break? Coffee fuels the best code!
     </div>
-    <!-- Coffee Game Modal -->
-    <div id="coffee-game-modal"
-        class="hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
-        <div class="bg-gray-900 rounded-lg p-8 max-w-md w-full mx-4 border-2 border-orange-600 relative">
-            <button id="close-game" class="absolute top-2 right-2 text-orange-600 hover:text-orange-500">
-                <i class="fas fa-times"></i>
-            </button>
-            <h3 class="text-2xl font-bold text-orange-600 mb-4">Brew Perfect Coffee!</h3>
-            <div id="game-steps" class="space-y-4">
-                <div class="step" data-step="1">
-                    <p class="text-white">Grind Beans <span id="grind-count">0</span>/10</p>
-                    <div class="h-2 bg-gray-700 rounded">
-                        <div id="grind-progress" class="h-2 bg-orange-600 rounded w-0"></div>
-                    </div>
-                    <button class="grind-btn mt-2 bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded">
-                        Grind!
-                    </button>
-                </div>
-                <div class="step hidden" data-step="2">
-                    <p class="text-white">Boil Water <span id="boil-count">0</span>/5</p>
-                    <div class="h-2 bg-gray-700 rounded">
-                        <div id="boil-progress" class="h-2 bg-orange-600 rounded w-0"></div>
-                    </div>
-                    <button class="boil-btn mt-2 bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded">
-                        Boil!
-                    </button>
-                </div>
-                <div class="step hidden" data-step="3">
-                    <p class="text-white">Brew Coffee (10s)</p>
-                    <div class="h-2 bg-gray-700 rounded">
-                        <div id="brew-progress" class="h-2 bg-orange-600 rounded w-0"></div>
-                    </div>
-                    <button id="start-brew" class="mt-2 bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded">
-                        Start Brewing
-                    </button>
-                </div>
-                <div id="game-complete" class="hidden text-center">
-                    <p class="text-xl text-green-500 mb-4">☕ Coffee Ready! Enjoy!</p>
-                    <button class="replay-btn bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded">
-                        Brew Again
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <script>
         (() => {
@@ -1259,47 +1224,7 @@
             animate();
         })();
 
-        //     // Coffee cup tooltip logic
-        //     const coffeeCup = document.getElementById('coffee-cup');
-        //     const tooltip = document.getElementById('coffee-tooltip');
 
-        //     function showTooltip() {
-        //         tooltip.style.opacity = '1';
-        //         const rect = coffeeCup.getBoundingClientRect();
-        //         tooltip.style.top = (rect.top - tooltip.offsetHeight - 8) + 'px';
-        //         tooltip.style.left = (rect.left + rect.width / 2 - tooltip.offsetWidth / 2) + 'px';
-        //     }
-        //     function hideTooltip() {
-        //         tooltip.style.opacity = '0';
-        //     }
-
-        //     coffeeCup.addEventListener('mouseenter', showTooltip);
-        //     coffeeCup.addEventListener('focus', showTooltip);
-        //     coffeeCup.addEventListener('mouseleave', hideTooltip);
-        //     coffeeCup.addEventListener('blur', hideTooltip);
-
-        //     // Motivational messages array
-        //     const messages = [
-        //         "Code is like humor. When you have to explain it, it’s bad. – Cory House",
-        //         "Data is the new oil, but it’s useless unless refined with code.",
-        //         "In God we trust. All others must bring data. – W. Edwards Deming",
-        //         "Keep calm and let the data scientist handle it.",
-        //         "Debugging: Being the detective in a crime movie where you are also the murderer.",
-        //         "Eat, Sleep, Code, Repeat. The data never lies.",
-        //         "Behind every great app is a developer who refused to give up.",
-        //         "Data science: turning coffee into insights since forever.",
-        //         "If at first you don’t succeed; call it version 1.0.",
-        //         "Programming isn’t about what you know; it’s about what you can figure out.",
-        //         "The best way to predict the future is to build it with code.",
-        //         "Life is short. Code fast. Drink coffee."
-        //     ];
-
-        //     // Show a new motivational message on each click
-        //     coffeeCup.addEventListener('click', () => {
-        //         const randomIndex = Math.floor(Math.random() * messages.length);
-        //         alert(messages[randomIndex]);
-        //     });
-        // 
     </script>
 </body>
 
