@@ -7,14 +7,12 @@
         Anshuman-IITG
     </title>
     <script src="https://cdn.tailwindcss.com">
-
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet" />
-
-
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -265,6 +263,7 @@
 <body class="bg-black text-white scroll-smooth relative">
 
     <nav class="fixed w-full bg-black bg-opacity-90 z-50 border-b border-orange-600">
+
         <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
             <a class="text-2xl font-bold text-violet-600 tracking-wide" href="#home">
                 @Mondal :D
@@ -316,14 +315,6 @@
                     <a class="bg-slate-200 text-slate-900 dark:bg-slate-800 dark:text-white 
                                                font-semibold px-5 py-2 rounded-lg shadow-md 
                                                hover:bg-slate-300 dark:hover:bg-slate-700 
-                                               hover:scale-105 transition-all duration-300" href="#interests">
-                        Interests
-                    </a>
-                </li>
-                <li>
-                    <a class="bg-slate-200 text-slate-900 dark:bg-slate-800 dark:text-white 
-                                               font-semibold px-5 py-2 rounded-lg shadow-md 
-                                               hover:bg-slate-300 dark:hover:bg-slate-700 
                                                hover:scale-105 transition-all duration-300" href="#contact">
                         Contact
                     </a>
@@ -366,7 +357,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="hover:text-orange-600 transition block" href="#research">
+                    <a class="hover:text-orange-600 transition block" href="#skills-interests">
                         Research &amp; Skills
                     </a>
                 </li>
@@ -383,6 +374,35 @@
             </ul>
         </div>
     </nav>
+    <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+
+        // Detect mouse near top on desktop to show navbar
+        window.addEventListener('mousemove', (e) => {
+            if (e.clientY < 50) {
+                navbar.style.transform = 'translateY(0)';
+            }
+        });
+
+        // For mobile: detect touchstart near top to show navbar
+        window.addEventListener('touchstart', (e) => {
+            if (e.touches[0].clientY < 50) {
+                navbar.style.transform = 'translateY(0)';
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY < lastScrollY) {
+                // Scrolling up - show navbar
+                navbar.style.transform = 'translateY(0)';
+            } else {
+                // Scrolling down - hide navbar
+                navbar.style.transform = 'translateY(-100%)';
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
     <main class="pt-20 max-w-7xl mx-auto px-6 space-y-24 relative">
         <!-- Home -->
         <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative" id="home">
@@ -594,268 +614,199 @@
 
                 </div>
             </section>
-
-            <!-- Projects -->
-            <section class="text-white" id="projects">
+            <!-- Experience -->
+            <section class="text-white" id="experience">
                 <h2 class="text-4xl mb-12 text-center section-title-gradient">
-                    Projects (To be updated soon!)
+                    Experience
                 </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-                    <a href="https://github.com/anshumanmondal2006/PassiveCircuitSimulator_IITG_EE204" target="_blank"
-                        class="block">
-                        <div
-                            class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 cursor-pointer focus:outline-none">
-                            <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center">
-                                <div class="flip-card-front flex flex-col justify-center items-center h-full">
-                                    <img alt="" class="mb-4 rounded-md shadow-md" height="150" loading="lazy"
-                                        src="EE204.png" width="150" />
-                                    <h3 class="text-xl font-bold text-orange-600 text-center">
-                                        Passive Circuit Simulator (Course Project - EE204)
-                                    </h3>
-                                </div>
-                                <div
-                                    class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
-                                    <p>
-                                        Developed a passive circuit simulator to compute branch voltages and currents
-                                        over
-                                        time for circuits with resistors,
-                                        inductors, capacitors, and independent voltage and current sources.
-                                    </p>
-                                </div>
+                <div class="space-y-10 max-w-4xl mx-auto">
+                    <article class="bg-gray-900 rounded-lg p-6 shadow-lg border border-green-600">
+                        <h3 class="text-2xl font-bold text-white">
+                            Remote Research Intern, Signal Processing
+                        </h3>
+                        <p class="italic text-gray-400 mb-2">
+                            2025 (Ongoing)
+                        </p>
+                        <p class="mb-2">
+                            <span class="font-bold text-blue-600">
+                                Under Prof. Anowarul Habib
+                            </span><br>
+                            At the Acoustic Sensing and Imaging Lab, The Arctic University of Norway(UiT)
+                        </p>
+                        <!-- <p class="text-gray-400">
+                            Duration: April 2025 - Present
+                        </p> -->
+                    </article>
+                </div>
+            </section>
+
+            <!-- Project: Passive Circuit Simulator -->
+            <section class="text-white max-w-5xl mx-auto my-16" id="projects">
+                <h2 class="text-4xl mb-12 text-center section-title-gradient">Projects(To be updated soon!)</h2>
+                <div class="flex justify-center">
+                    <div class="flip-card bg-gray-900 border border-orange-600 rounded-lg shadow-lg h-72 w-80 cursor-pointer focus:outline-none"
+                        tabindex="0">
+                        <div class="flip-card-inner h-full p-6 flex flex-col justify-center items-center text-center">
+                            <!-- Front -->
+                            <div class="flip-card-front flex flex-col justify-center items-center h-full">
+                                <img alt="" class="mb-4 rounded-md shadow-md" src="EE204.png" width="150" height="150"
+                                    loading="lazy" />
+                                <h3 class="text-xl font-bold text-orange-600">
+                                    Passive Circuit Simulator<br>(EE204 Project)
+                                </h3>
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="flip-card-back flex flex-col justify-center items-center h-full text-center px-2">
+                                <p>
+                                    Simulates branch voltages and currents over time for circuits with resistors,
+                                    capacitors,
+                                    inductors,
+                                    and independent voltage/current sources.
+                                </p>
                             </div>
                         </div>
-                    </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="text-white max-w-5xl mx-auto" id="skills-interests">
+                <h2 class="text-4xl mb-12 text-center section-title-gradient">Skills</h2>
+                <div class="flex justify-center">
+                    <div
+                        class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg w-full max-w-2xl text-center">
+                        <h3 class="text-2xl font-bold mb-6 text-orange-600">Technical Skills</h3>
+                        <ul class="space-y-3 text-gray-300 text-lg">
+                            <li><span class="font-bold text-orange-600">Python</span> – NumPy, Pandas, Scikit-learn,
+                                Matplotlib,
+                                OpenCV</li>
+                            <li><span class="font-bold text-orange-600">TensorFlow / PyTorch</span> – Deep Learning</li>
+                            <li><span class="font-bold text-orange-600">TechStacks</span> – HTML, CSS, JS, Flutter</li>
+                            <li><span class="font-bold text-orange-600">Git / GitHub</span> – Version Control</li>
+                            <li><span class="font-bold text-orange-600">Softwares</span> – Matlab(elementary) and
+                                LtSpice</li>
+                            <li><span class="font-bold text-orange-600">Linux</span> – CLI & Scripting</li>
+                            <li><span class="font-bold text-orange-600">AWS</span> – Cloud Services</li>
+                        </ul>
+                    </div>
+
+
+                    <!-- Interests -->
+                    <!-- <div>
+                            <h3 class="text-2xl font-bold mb-4 text-orange-600 text-center">Interests</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-300 text-lg">
+                                <li><span class="font-bold text-orange-600">Cricket</span> – Passionate player &
+                                    follower</li>
+                                <li><span class="font-bold text-orange-600">F1 Racing</span> – Tech + Precision Driving
+                                </li>
+                                <li><span class="font-bold text-orange-600">Geopolitics</span> – Global dynamics & IR
+                                </li>
+                                <li><span class="font-bold text-orange-600">Quote</span> – “Love what you do.” – Steve
+                                    Jobs</li>
+                            </ul>
+                        </div> -->
+                </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="text-white max-w-3xl mx-auto scroll-mt-24 pt-16" id="contact">
+
+
+
+                <div class="bg-gray-900 rounded-lg p-8 border border-orange-600 shadow-lg space-y-8 relative z-50">
+                    <!-- Contact Info -->
+                    <!-- <div class="space-y-6">
+                        <div class="flex items-center space-x-4 group">
+                            <i class="fab fa-linkedin fa-2x text-orange-600"></i>
+                            <a class="text-lg font-semibold text-white hover:text-orange-600 transition break-all"
+                                href="https://www.linkedin.com/in/anshuman-mondal-145314280" rel="noopener noreferrer"
+                                target="_blank">
+                                linkedin.com/in/anshuman-mondal-145314280
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <i class="fas fa-envelope fa-2x text-orange-600"></i>
+                            <a class="text-lg font-semibold text-white hover:text-orange-600 transition break-all"
+                                href="mailto:anshuman.mondal@iitg.ac.in">
+                                anshuman.mondal@iitg.ac.in
+                            </a>
+                        </div>
+                    </div> -->
+
+                    <section class="text-white max-w-3xl mx-auto scroll-mt-24 pt-16 relative z-30" id="contact">
+                        <h2
+                            class="text-4xl mb-10 text-center font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent">
+                            Contact Me
+                        </h2>
+                        <form class="space-y-6" action="#" method="POST">
+                            <div>
+                                <label for="name"
+                                    class="block text-lg font-semibold mb-1 text-pink-600 dark:text-pink-400">Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full p-3 rounded 
+                                                                   bg-white dark:bg-gray-800 
+                                                                   text-gray-900 dark:text-gray-100 
+                                                                   placeholder-gray-500 dark:placeholder-gray-400 
+                                                                   border border-gray-300 dark:border-gray-600 
+                                                                   focus:border-green-500 focus:ring-1 focus:ring-green-500 focus:outline-none transition" />
+                            </div>
+                            <div>
+                                <label for="email"
+                                    class="block text-lg font-semibold mb-1 text-pink-600 dark:text-pink-400">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    title="Please enter a valid email address (e.g., user@example.com)"
+                                    class="w-full p-3 rounded 
+                                                                   bg-white dark:bg-gray-800 
+                                                                   text-gray-900 dark:text-gray-100 
+                                                                   placeholder-gray-500 dark:placeholder-gray-400 
+                                                                   border border-gray-300 dark:border-gray-600 
+                                                                   focus:border-green-500 focus:ring-1 focus:ring-green-500 focus:outline-none transition
+                                                                   invalid:border-red-500 invalid:text-red-600
+                                                                   focus:invalid:border-red-500 focus:invalid:ring-red-500" />
+                                <p id="email-error" class="mt-1 text-sm text-red-600 dark:text-red-400 hidden">Please
+                                    enter a valid email
+                                    address.</p>
+                            </div>
+                            <div>
+                                <label for="message"
+                                    class="block text-lg font-semibold mb-1 text-pink-600 dark:text-pink-400">Suggestions
+                                    /
+                                    Message</label>
+                                <textarea id="message" name="message" rows="4" required
+                                    class="w-full p-3 rounded 
+                                                                   bg-white dark:bg-gray-800 
+                                                                   text-gray-900 dark:text-gray-100 
+                                                                   placeholder-gray-500 dark:placeholder-gray-400 
+                                                                   border border-gray-300 dark:border-gray-600 
+                                                                   focus:border-green-500 focus:ring-1 focus:ring-green-500 focus:outline-none transition"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit"
+                                    class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded transition
+                                                                   focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+                                    Send
+                                </button>
+                            </div>
+                        </form>
+                    </section>
                 </div>
 
-            </section>
-            <!-- Research Interests and Skills -->
-            <section class="text-white max-w-7xl mx-auto" id="research">
-                <h2 class="text-4xl mb-12 text-center section-title-gradient">
-                    Research Interests &amp; Skills
-                </h2>
-                <div class="flex flex-col sm:flex-row justify-center gap-8 max-w-5xl mx-auto">
-                    <div class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex-1 max-w-md">
-                        <h3 class="text-xl font-bold mb-6 text-orange-600 text-center">
-                            Research Interests
-                        </h3>
-                        <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Machine Learning
-                                </span>
-                                - Algorithms and applications
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Natural Language Processing
-                                </span>
-                                - Text analysis and generation
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Computer Vision
-                                </span>
-                                - Image and video processing
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Time Series Analysis
-                                </span>
-                                - Forecasting and anomaly detection
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Reinforcement Learning
-                                </span>
-                                - Decision making models
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex-1 max-w-md">
-                        <h3 class="text-xl font-bold mb-6 text-orange-600 text-center">
-                            Skills
-                        </h3>
-                        <ul class="list-disc list-inside space-y-3 text-gray-300 text-lg">
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Python
-                                </span>
-                                - Pandas, NumPy, Scikit-learn
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    R
-                                </span>
-                                - Statistical analysis and visualization
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    SQL
-                                </span>
-                                - Database querying and management
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    TensorFlow &amp; PyTorch
-                                </span>
-                                - Deep learning frameworks
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Tableau &amp; Power BI
-                                </span>
-                                - Data visualization tools
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Git &amp; GitHub
-                                </span>
-                                - Version control and collaboration
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Docker
-                                </span>
-                                - Containerization and deployment
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Linux
-                                </span>
-                                - Command line and scripting
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    AWS
-                                </span>
-                                - Cloud computing services
-                            </li>
-                            <li>
-                                <span class="font-bold text-orange-600">
-                                    Jupyter Notebooks
-                                </span>
-                                - Interactive coding and documentation
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <!-- Interests -->
-            <section class="text-white max-w-5xl mx-auto" id="interests">
-                <h2 class="text-4xl mb-12 text-center section-title-gradient">
-                    Other Interests
-                </h2>
-                <div class="space-y-12">
-                    <article
-                        class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex flex-col md:flex-row items-center md:space-x-8">
-                        <img alt="Action shot of a cricket player batting on a sunny cricket field with stadium in background"
-                            class="rounded-md mb-4 md:mb-0 w-full md:w-48 object-cover shadow-md" height="150"
-                            loading="lazy"
-                            src="https://storage.googleapis.com/a1aa/image/feed37b6-6b50-475d-1abd-97045d2fa100.jpg"
-                            width="200" />
-                        <div class="flex flex-col justify-center">
-                            <h3 class="text-2xl font-bold text-orange-600 mb-2">
-                                Cricket
-                            </h3>
-                            <p class="text-gray-300">
-                                Cricket is a sport I deeply enjoy, both playing and following international matches. The
-                                strategy, teamwork, and thrill of the game inspire me.
-                            </p>
-                        </div>
-                    </article>
-                    <article
-                        class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex flex-col md:flex-row items-center md:space-x-8">
-                        <img alt="High-speed Formula 1 race car speeding on a professional racing track with blurred background"
-                            class="rounded-md mb-4 md:mb-0 w-full md:w-48 object-cover shadow-md" height="150"
-                            loading="lazy"
-                            src="https://storage.googleapis.com/a1aa/image/5c36f5f8-0d85-48af-11d7-8188e782e09f.jpg"
-                            width="200" />
-                        <div class="flex flex-col justify-center">
-                            <h3 class="text-2xl font-bold text-orange-600 mb-2">
-                                F1 Racing
-                            </h3>
-                            <p class="text-gray-300">
-                                Formula 1 racing fascinates me with its blend of cutting-edge technology, precision
-                                driving,
-                                and intense competition. I follow the seasons closely.
-                            </p>
-                        </div>
-                    </article>
-                    <article
-                        class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg flex flex-col md:flex-row items-center md:space-x-8">
-                        <img alt="World map with icons representing geopolitical hotspots and global connections"
-                            class="rounded-md mb-4 md:mb-0 w-full md:w-48 object-cover shadow-md" height="150"
-                            loading="lazy"
-                            src="https://storage.googleapis.com/a1aa/image/afeab675-f59e-4b29-8d3b-92d359e1500a.jpg"
-                            width="200" />
-                        <div class="flex flex-col justify-center">
-                            <h3 class="text-2xl font-bold text-orange-600 mb-2">
-                                Geopolitics
-                            </h3>
-                            <p class="text-gray-300">
-                                I am intrigued by global politics and international relations. Understanding
-                                geopolitical
-                                dynamics helps me appreciate the complexities of our world.
-                            </p>
-                        </div>
-                    </article>
-                    <div
-                        class="bg-gray-900 rounded-lg p-6 border border-orange-600 shadow-lg text-center max-w-3xl mx-auto">
-                        <h3 class="text-3xl font-bold text-orange-600 mb-6">
-                            Quotes I Live By
-                        </h3>
-                        <blockquote class="italic text-gray-300 space-y-4">
-                            <p>
-                                “The only way to do great work is to love what you do.” – Steve Jobs
-                            </p>
-                            <p>
-                                “In the middle of difficulty lies opportunity.” – Albert Einstein
-                            </p>
-                            <p>
-                                “Success is not final, failure is not fatal: It is the courage to continue that counts.”
-                                –
-                                Winston Churchill
-                            </p>
-                        </blockquote>
-                    </div>
-                </div>
-            </section>
-            <!-- Contact -->
-            <section class="text-white max-w-3xl mx-auto" id="contact">
-                <h2 class="text-4xl mb-12 text-center section-title-gradient">
-                    Contact Me
-                </h2>
-                <!-- Update your contact section with these changes -->
-                <div class="bg-gray-900 rounded-lg p-8 border border-orange-600 shadow-lg space-y-8 relative z-50">
-                    <div class="flex items-center space-x-4 group">
-                        <i class="fab fa-linkedin fa-2x text-orange-600"></i>
-                        <a class="text-lg font-semibold text-white hover:text-orange-600 transition break-all"
-                            href="https://www.linkedin.com/in/anshuman-mondal-145314280" rel="noopener noreferrer"
-                            target="_blank" style="pointer-events: auto !important">
-                            linkedin.com/in/anshuman-mondal-145314280
-                        </a>
-                    </div>
-                    <div class="flex items-center space-x-4 group">
-                        <i class="fas fa-envelope fa-2x text-orange-600"></i>
-                        <a class="text-lg font-semibold text-white hover:text-orange-600 transition break-all"
-                            href="mailto:anshuman.mondal@iitg.ac.in" style="pointer-events: auto !important">
-                            anshuman.mondal@iitg.ac.in
-                        </a>
-                    </div>
-                </div>
-                </div>
                 <footer class="mt-16 text-center text-gray-500 text-sm max-w-2xl mx-auto pb-6">
-                    © 2025 Anshuman Mondal. All rights reserved.
+                    © 2025 Anshuman Mondal - @IITG
                 </footer>
             </section>
-    </main>
 
+    </main>
+    <!-- 
     <img alt="Animated floating coffee cup icon" aria-describedby="coffee-tooltip" height="60" id="coffee-cup"
         src="https://storage.googleapis.com/a1aa/image/b94dd638-50f9-4ed2-dc6c-a135a476f043.jpg" tabindex="0"
         width="60" />
     <div class="tooltip" id="coffee-tooltip" role="tooltip">
         Need a break? Coffee fuels the best code!
-    </div>
+    </div> -->
 
     <script>
         (() => {
