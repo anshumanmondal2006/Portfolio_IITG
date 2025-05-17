@@ -174,3 +174,39 @@ document.addEventListener('DOMContentLoaded', function () {
         resetGame();
     });
 });
+// Update your existing mobile menu code with this:
+// Mobile menu toggle and close logic
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.classList.toggle('active');
+});
+
+// Add this code to close menu on nav item click
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.classList.remove('active');
+    });
+});
+
+// Update your existing smooth scroll code to include mobile menu close
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 80,
+                behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                menuBtn.classList.remove('active');
+            }
+        }
+    });
+});
