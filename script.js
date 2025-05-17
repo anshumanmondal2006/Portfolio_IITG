@@ -76,19 +76,101 @@ themeToggleBtn.addEventListener('click', () => {
     // Your existing theme toggle code
     // The nav colors will automatically update because of the CSS we added
 });
-// Add these to your script
-const loader = new THREE.GLTFLoader();
-loader.load(
-    'path/to/brain-model.glb',
-    function (gltf) {
-        const brainModel = gltf.scene;
-        brainModel.scale.set(0.5, 0.5, 0.5);
-        scene.add(brainModel);
-    },
-    undefined,
-    function (error) {
-        console.error('Error loading brain model', error);
-    }
-);
-<canvas id="globe-canvas" style="width: 100%; height: 500px;"></canvas>
 
+// Coffee Game Logic
+document.addEventListener('DOMContentLoaded', function () {
+    const coffeeCup = document.getElementById('coffee-cup');
+    const gameModal = document.getElementById('coffee-game-modal');
+    const closeGameBtn = document.getElementById('close-game');
+    let currentStep = 1;
+
+    const gameState = {
+        grinds: 0,
+        boils: 0,
+        brewing: false
+    };
+
+    function resetGame() {
+        gameState.grinds = 0;
+        gameState.boils = 0;
+        gameState.brewing = false;
+        currentStep = 1;
+
+        document.querySelectorAll('.step').forEach(step => {
+            step.classList.add('hidden');
+            if (step.dataset.step === '1') step.classList.remove('hidden');
+        });
+
+        document.getElementById('game-complete').classList.add('hidden');
+        updateProgress('grind', 0);
+        updateProgress('boil', 0);
+        updateProgress('brew', 0);
+    }
+
+    function updateProgress(type, value) {
+        const progressBars = {
+            grind: { bar: 'grind-progress', count: 'grind-count', max: 10 },
+            boil: { bar: 'boil-progress', count: 'boil-count', max: 5 },
+            brew: { bar: 'brew-progress', max: 10 }
+        };
+
+        const { bar, count, max } = progressBars[type];
+        const progress = (value / max) * 100;
+
+        document.getElementById(bar).style.width = `${progress}%`;
+        if (count) document.getElementById(count).textContent = value;
+    }
+
+    // Event Listeners
+    coffeeCup.addEventListener('click', () => {
+        gameModal.classList.remove('hidden');
+        resetGame();
+    });
+
+    closeGameBtn.addEventListener('click', () => {
+        gameModal.classList.add('hidden');
+    });
+
+    document.querySelector('.grind-btn').addEventListener('click', () => {
+        gameState.grinds = Math.min(gameState.grinds + 1, 10);
+        updateProgress('grind', gameState.grinds);
+
+        if (gameState.grinds === 10) {
+            document.querySelector('[data-step="1"]').classList.add('hidden');
+            document.querySelector('[data-step="2"]').classList.remove('hidden');
+            currentStep = 2;
+        }
+    });
+
+    document.querySelector('.boil-btn').addEventListener('click', () => {
+        gameState.boils = Math.min(gameState.boils + 1, 5);
+        updateProgress('boil', gameState.boils);
+
+        if (gameState.boils === 5) {
+            document.querySelector('[data-step="2"]').classList.add('hidden');
+            document.querySelector('[data-step="3"]').classList.remove('hidden');
+            currentStep = 3;
+        }
+    });
+
+    document.getElementById('start-brew').addEventListener('click', () => {
+        if (gameState.brewing) return;
+        gameState.brewing = true;
+
+        let seconds = 0;
+        const brewInterval = setInterval(() => {
+            seconds++;
+            updateProgress('brew', seconds);
+
+            if (seconds >= 10) {
+                clearInterval(brewInterval);
+                document.querySelector('[data-step="3"]').classList.add('hidden');
+                document.getElementById('game-complete').classList.remove('hidden');
+            }
+        }, 1000);
+    });
+
+    document.querySelector('.replay-btn').addEventListener('click', () => {
+        resetGame();
+    });
+});
