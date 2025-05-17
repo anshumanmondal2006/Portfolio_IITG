@@ -112,3 +112,69 @@ html {
     overflow: visible;
     z-index: 10;
 }
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    animation: typing 4s steps(30, end) infinite, blink 0.7s step-end infinite;
+}
+
+/* Coffee Game Styles */
+#coffee-game-modal {
+    backdrop-filter: blur(5px);
+}
+
+.step {
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Coffee Game Styles */
+#coffee-game-modal {
+    backdrop-filter: blur(5px);
+}
+
+.step {
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+#coffee-game-modal .step button {
+    transition: all 0.2s ease;
+}
+
+#coffee-game-modal .step button:hover {
+    transform: scale(1.05);
+}
+
+#coffee-game-modal .step button:active {
+    transform: scale(0.95);
+}
